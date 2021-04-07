@@ -1,0 +1,453 @@
+1)
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="http://Localhost:8086/Pra/result.jsp">
+Name:<input type="text"  name="n1"> <br/>
+<br/>
+<input type="submit" value="ok">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%=request.getParameter("n1") %>
+</body>
+</html>
+
+
+*******************************
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="http://Localhost:8086/Pra/result1.jsp">
+Name:<input type="text"  name="textbox"> <br/>
+<br/>
+<input type="submit" value="ok">
+
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%=request.getParameter("textbox") %>
+</body>
+</html>
+
+************************************
+3)
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%! int i=0;%>
+<%i=i+1; %>
+your are visiting the page for :
+<%=i %>
+time
+</body>
+</html>
+++++++++++++++++++++++++++++++++++++++++
+4)
+package com.cts;
+
+public class PerformTask {
+
+	public static void main(String[] args) {
+		 doTask() ;
+
+}
+
+	public static String doTask() {
+		return "hello World";
+		
+	}
+}
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import ="com.cts.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%!PerformTask pt=new PerformTask(); %>
+<%=pt.doTask() %>
+</body>
+</html>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+5)<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%session.setAttribute("age",22); %>
+<%= session.getAttribute("age") %>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" session="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%session.setAttribute("age",22); %>
+<%= session.getAttribute("age") %>
+
+</body>
+</html>
+----------------------------------------
+6)<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" errorPage=error.jsp %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%!int i=5;
+   int j;%>
+   <%j=i/0; %>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isErrorPage="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%= exception %> <br/>
+
+<%= exception.getMessage() %>
+</body>
+</html>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+7)<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="http://Localhost:8086/Pra/final.jsp">
+Name: <input type="text" name="name"> <br/>
+		Age: <input type="text" name="age"> <br/>
+		<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%! int i,n;
+   String s1;
+          %>
+          <%   s1= request.getParameter("age");
+               n=s1.length();
+               i=0;
+               do
+            	   if(n==2){
+                    char ch=s1.charAt(i);
+                    switch(ch)
+                    {
+                         case '0': out.println("Zero  ");
+                              break;
+                         case '1': out.println("One  ");
+                              break;
+                         case '2': out.println("Two  ");
+                              break;
+                         case '3': out.println("Three  ");
+                              break;
+                         case '4': out.println("Four ");
+                              break;
+                         case '5': out.println("Five  ");
+                              break;
+                         case '6': out.println("Six  ");
+                              break;
+                         case '7': out.println("Seven  ");
+                              break;
+                         case '8': out.println("Eight  ");
+                              break;
+                         case '9': out.println("Nine  ");
+                              break;
+                    }
+                    i++;
+               }
+               while(i<n);
+%>
+</body>
+</html>
+
+------------------------------------
+10)<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="http://Localhost:8086/Pra/E10b" >
+Name: <input type="text" name="un"> <br/>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%= request.getParameter("un") %><br/>
+</body>
+</html>
+
+
+11)<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="http://localhost:8086/Pra/E11b.jsp">
+		Name: <input type="text" name="username"> <br/>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<% String name = request.getParameter("username");
+	 if(name.equals("Ravi")){
+	%>
+	<%= application.getInitParameter("Ravi") %>
+	<% } %>
+	</body>
+</html>
+
+12)
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%= application.getInitParameter("email") %>
+</body>
+</html>
+
+
+13)
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%= config.getInitParameter("department") %><br/>
+</body>
+</html>
+
+
+14)<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" errorPage="Problem14b.jsp"  %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%! int i=10; %>
+	<% int j=i/0; %>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isErrorPage="true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%= exception %> <br/>
+
+<%= exception.getMessage() %>
+
+</body>
+</html>
+
+
+15)
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="http://localhost:8086/Pra/E15a">
+		Name: <input type="text" name="username"> <br/>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
+
+
+package com.pack;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class P15ser
+ */
+@WebServlet("/Problem15")
+public class P15ser extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public P15ser() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+
+        PrintWriter pw=response.getWriter();
+
+        //String name=request.getParameter("username");
+
+        RequestDispatcher rd = request.getRequestDispatcher("Problem15b.jsp");
+		rd.forward(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+}
+
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	User Name: <%=  request.getParameter("username") %><br/>
+</body>
+</html>
+
+
